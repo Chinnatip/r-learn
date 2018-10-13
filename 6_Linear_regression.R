@@ -43,6 +43,7 @@ error_pow  <- (test_data$medv - prediction) ** 2
 # Root Mean Sqrt Error > efficiency of these model
 rmse <- sqrt(mean(error_pow))
 rmse 
+prediction
 
 # STEP 4 > Optimization
 # 
@@ -51,6 +52,7 @@ prediction <- predict(lm_fit_2 , test_data)
 error_pow  <- (test_data$medv - prediction) ** 2
 rmse_2 <- sqrt(mean(error_pow))
 rmse_2
+prediction
 
 # compare rmse - rmse_2
 rmse - rmse_2 
