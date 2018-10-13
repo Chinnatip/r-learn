@@ -1,6 +1,6 @@
 # essential package
 # installed.packages('tidyverse') # install pkg
-# library(tidyverse) # use tidyverse
+library(tidyverse) # use tidyverse
 
 
 # Shortcut key
@@ -78,9 +78,9 @@ food_allergy   <- c(T,T,F,F,F)
 df <- data.frame(customer_names , customer_ages , food_allergy)
 
 ##### Workshop 5 > Create Flight DataFrame ####
-flights <- read.csv("flights.csv")
-boston  <- read.csv('Boston.csv', sep = ',') # import with config "seperator" = ","
-airline <- read.csv("airlines.csv")
+flights <- read.csv("./_datasets/flights.csv")
+boston  <- read.csv('./_datasets/Boston.csv', sep = ',') # import with config "seperator" = ","
+airline <- read.csv("./_datasets/airlines.csv")
 # View(boston)
 
 #### Workshop 6 > Subsetting ####
@@ -91,7 +91,7 @@ customer_ages[c(1,2,3)] # subsetting by vestor set
 
 #### Workshop 7 > Operan on subsetting (map) #### 
 # ** we use this operation to 'filter' DataFrame **
-x        # check X
+x <- customer_ages # check X
 x > 100  # check X member that more than '100' log 'logical'
 x[x>100] # filter X member that more than '100' log 'vector' <3
 
@@ -144,7 +144,7 @@ cor(df$mpg,df$hp)
 cor(df)
 # write new correlation file
 result <- cor(df)
-write.csv(result, 'correlation_matrix.csv')
+write.csv(result, './_datasets/correlation_matrix.csv')
 
 
 #### Wokrshop 12 > cleansing data #1 [NUMERIC] > clean mission value if value ####
@@ -186,3 +186,4 @@ mean(complete.cases(clean_msleep))
 replacer  <- mean(msleep$sleep_rem, na.rm = T)
 new_sleep <- replace_na(msleep$sleep_rem , replacer)
 mean(complete.cases(new_sleep))
+

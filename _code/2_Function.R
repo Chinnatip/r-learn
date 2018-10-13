@@ -1,3 +1,5 @@
+library(tidyverse) # use tidyverse
+
 #### Workshop 13 > function ####
 # create function
 sum_two_num <- function(a = 0 ,b = 0){
@@ -15,14 +17,11 @@ sum_two_num(b=200)
 # sample(1:6,1)
 # sample(c('Red','Blue','Green'),1)
 # create function
-roll_dice <- function(){
-  dice_a <- sample(1:6, 1)
-  dice_b <- sample(1:6, 1)
-  print( sum(dice_b + dice_b) )
-  #  # shorthand total!
-}
+
+source('./_method/roll_dice.R')
+
 # let's roll!
-roll_dice()
+roll_dice(2)
 # extra and sum roll N dice!
 # roll_dice <- function(n){
 #   total <- sum( sample(1:6, n , replace= T) )
