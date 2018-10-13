@@ -44,7 +44,7 @@ df %>%
 
 # inspect in column and group dataset by "KEY"
 df %>% 
-  group_by(am) %>%
+  group_by(am , cyl) %>%
   summarise(avg_mpg = mean(mpg),
             sd_mpg  = sd(mpg),
             n       = n())
