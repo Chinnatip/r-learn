@@ -23,12 +23,36 @@ arrange(df, desc(hp))
 arrange(df, -hp)
 
 # pipe operator # complex transformation
+df %>%
+  select(mpg,hp,wt) %>%
+  filter(hp > 100 & wt < 3) %>%
+  arrange(-hp) %>%
+  head(3)
+
+# create new column in df
+df %>% 
+  select(hp , wt) %>% 
+  mutate(new_column = hp + wt , 
+         col_2  = hp/100 ,
+         wt_sqt = sqrt(hp))
+
+# summarise
+df %>% 
+  summarise(avg_mpg = mean(mpg),
+            sd_mpg  = sd(mpg),
+            n       = n())
+
+# inspect in column and group dataset by "KEY"
+df %>% 
+  group_by(am) %>%
+  summarise(avg_mpg = mean(mpg),
+            sd_mpg  = sd(mpg),
+            n       = n())
+
+# write result transformation
 result <- df %>%
   select(mpg,hp,wt) %>%
   filter(hp > 100 & wt < 3) %>%
   arrange(-hp) %>%
   head(3)
-result
-
-# write result transformation
 write.csv(result , './_datasets/transformation.csv')
