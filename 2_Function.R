@@ -1,6 +1,24 @@
 #### Workshop 13 > function ####
-sum_two_mun <- function(a,b){
+# create function
+sum_two_num <- function(a = 0 ,b = 0){
   total <- a + b
   print(total)
 }
-  
+# user function
+sum_two_num(20,3)
+sum_two_num(,100)
+sum_two_num(b=200)
+
+
+#### Workshop 14 > rolling dice ####
+# Sample <- Ramdom index by sampling data
+# sample(1:6,1)
+# sample(c('Red','Blue','Green'),1)
+# create function
+roll_dice <- function(){
+  dice_a <- sample(1:6,1)
+  dice_b <- sample(1:6,1)
+  print( sum(dice_b + dice_b))
+}
+# let's roll!
+roll_dice()
