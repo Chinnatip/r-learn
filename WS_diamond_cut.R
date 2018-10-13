@@ -20,14 +20,15 @@ sample_diamond <- sample_n(df, 2000)
 # glimpse(sample_diamond)
 
 # [point] compare carat to price
-compare_carat_price = ggplot(sample_diamond , aes(carat , price, color=clarity))
-compare_carat_price + geom_point( size=1.2 , 
-                                  alpha=0.8 ,
-                                  shape=2)
+compare_carat_price <- ggplot(sample_diamond , aes(carat , price, color=clarity))
+compare_carat_price +  geom_point( size=1.2 , 
+                                   alpha=0.8 ,
+                                   shape=2)
 
-compare_carat = ggplot(sample_diamond , aes(carat , price))
-compare_carat + geom_point() + geom_smooth()
-compare_carat + geom_point() + geom_smooth(method="loess")
-compare_carat + geom_point() + geom_smooth(method='gam')
-compare_carat + geom_point() + geom_smooth(method='loess') + theme_minimal()
-compare_carat + geom_point() + geom_smooth(method='loess') + theme_minimal() + facet_wrap(~ cut)
+compare_carat <- ggplot(sample_diamond , aes(carat , price))
+plot_style    <- geom_point( size=1.2, alpha=0.8, shape=2 )
+compare_carat + plot_style + geom_smooth()
+compare_carat + plot_style + geom_smooth(method="loess")
+compare_carat + plot_style + geom_smooth(method='gam')
+compare_carat + plot_style + geom_smooth(method='loess') + theme_minimal()
+compare_carat + plot_style + geom_smooth(method='loess') + theme_minimal() + facet_wrap(~ cut)
