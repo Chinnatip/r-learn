@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1539398184764.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "762723613",
+    "id" : "70D1B70F",
+    "lastKnownWriteTime" : 1539404161,
+    "last_content_update" : 1539404161394,
+    "path" : "~/R_learn/1_Basic_cmmand.R",
+    "project_path" : "1_Basic_cmmand.R",
+    "properties" : {
+        "cursorPosition" : "104,73",
+        "scrollLine" : "83",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
