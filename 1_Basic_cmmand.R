@@ -162,5 +162,9 @@ mean(null_val)
 complete.cases(df)
 mean(complete.cases(df))
 
-#### 
-msleep
+#### cleansing for real df
+# find mean of msleep 'ignore missing value'
+mean(msleep$sleep_rem, na.rm = T)
+
+# calculate missing ratio
+mean(complete.cases(msleep))
