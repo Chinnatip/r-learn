@@ -16,11 +16,12 @@ sum_two_num(b=200)
 # sample(c('Red','Blue','Green'),1)
 # create function
 
-roll_dice <- function(){
-  dice_a <- sample(1:6, 1)
-  dice_b <- sample(1:6, 1)
-  print( sum(dice_b + dice_b) )
-  # total <- sum( sample(1:6, 2 , replace= T) ) # shorthand total!
-}
+source('./_method/roll_dice.R')
+
 # let's roll!
-roll_dice()
+roll_dice(2)
+# extra and sum roll N dice!
+# roll_dice <- function(n){
+#   total <- sum( sample(1:6, n , replace= T) )
+#   print(total)
+# }
