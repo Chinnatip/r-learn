@@ -146,7 +146,13 @@ cor(df)
 result <- cor(df)
 write.csv(result, 'correlation_matrix.csv')
 
-#### Wokrshop 12 > cleansing data #1  > clean mission value ####
+
+#### Wokrshop 12 > cleansing data #1 [NUMERIC] > clean mission value if value ####
+### cleansing startegy
+# FIND missing > use 'complate.cases' , 'mean' for optimize and calculate mission %
+# DROP missing row > use if your DF very very large
+# REPLACE mission value with mean_with_no_na > berrter strategy
+
 # create mission value vector
 null <- c(1,2,4,7,NA,455,32,454,2,58,NA,NA)
 
@@ -166,8 +172,17 @@ mean(complete.cases(df))
 # find mean of msleep 'ignore missing value'
 mean(msleep$sleep_rem, na.rm = T)
 
-# calculate missing ratio
+# calculate missing df (%)
 mean(complete.cases(msleep))
 
-# complete df
+# calculate complete df (%)
 1 - mean(complete.cases(msleep))
+
+# drop_na
+clean_msleep <- drop_na(msleep)
+mean(complete.cases(clean_msleep))
+
+# replace na_with_mean
+replacer  <- mean(msleep$sleep_rem, na.rm = T)
+new_sleep <- replace_na(msleep$sleep_rem , replacer)
+mean(complete.cases(new_sleep))
