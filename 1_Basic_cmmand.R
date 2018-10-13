@@ -145,3 +145,22 @@ cor(df)
 # write new correlation file
 result <- cor(df)
 write.csv(result, 'correlation_matrix.csv')
+
+#### Wokrshop 12 > cleansing data #1  > clean mission value ####
+# create mission value vector
+null <- c(1,2,4,7,NA,455,32,454,2,58,NA,NA)
+
+# fix mission in null then calc mean
+mean(null , na.rm = TRUE)
+
+# check mission value
+null_val <- is.na(null)
+sum(null_val)
+mean(null_val)
+
+# Inspect each data for check MISSING OR NOT
+complete.cases(df)
+mean(complete.cases(df))
+
+#### 
+msleep
