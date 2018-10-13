@@ -23,5 +23,15 @@ airline <- as.tbl(airline)
 # left_join  # prepare left-table and join right-table if "matched key"
 # full_join  # join every "key" in left-right "will facing amount of NA"
 # right_join # opposite of left join
-filter_flight %>%
-  left_join( airline, by = "carrier" )
+band_members %>%
+  left_join(band_instruments, by="name")
+
+
+#### Workshop > prepare top_flight_in_september.csv ####
+result <- filter_flight %>%
+  left_join( airline, by = "carrier" ) %>%
+  select( name, n ) %>%
+  rename(carrier_name=name , flight_amount=n)
+
+# Export 
+write.csv(result, "./_datasets/top_flight__september.csv")
