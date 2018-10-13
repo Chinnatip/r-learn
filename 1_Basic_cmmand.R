@@ -1,3 +1,8 @@
+# essential package
+# installed.packages('tidyverse') # install pkg
+# library(tidyverse) # use tidyverse
+
+
 # Shortcut key
 # cmd + enter //  run function in this line ( Debugging mode )
 # ctrl + l // clear log
@@ -9,6 +14,10 @@
 # ctrl + 3 // goto help mode
 # ctrl + 4 // goto history mode
 # View( file_path ) # to open file !!
+
+# Import - Export CSV
+# read.csv('import_file_name.csv')
+# write.csv(df, 'export_file_name.csv')
 
 # get working directory
 getwd()
@@ -103,3 +112,36 @@ df[1:5 , 1:4] # get 'first 5 row' with 'first 4 column'
 df[1:5 , ]    # get 'first 5 row'
 df[ , 1:3]    # get 'first 3 column' of every row
 df[1:5 , c('mpg','wt','am','hp')] # get 'mpg','wt','am','hp' of every row
+
+
+#### Workshop 9 > Play with tidyverse tbl ####
+data(mtcars)
+# use tbl > better df
+df <- as.tbl(mtcars)
+# show data structure - skimming
+# we usually watch both head-tail of our DF 
+# to see 'what happened with our data'
+glimpse(df)
+# glimpse(head(df))
+# glimpse(tail(df))
+
+#### Workshop 10 > Calculte mean & quadrant & median & summary of each column ####
+# get 'xxxx' of DF by column 'yyy'
+mean(df$hp) # mean
+sd(df$hp)   # sd
+sum(df$hp)  # summary
+min(df$hp)  # min
+max(df$hp)  # max
+# everything finish with this !
+summary(df$wt) # summary everything of this column
+
+#### Workshop 11 > Correlation ####
+# find correlation 'mile per gasolene' and 'weight'
+# corellation = '-' cuz more weight will drop mpg
+cor(df$mpg,df$wt)
+cor(df$mpg,df$hp)
+# automate find corellation
+cor(df)
+# write new correlation file
+result <- cor(df)
+write.csv(result, 'correlation_matrix.csv')
